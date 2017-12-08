@@ -18,7 +18,7 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
-    private static final String[] from=new String[]{
+    private static final String[] from = new String[]{
             "name","num","date_ins"
     };
     private static final int[] to = new int[]{
@@ -34,13 +34,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getLoaderManager().initLoader(1,null,this);
+        getLoaderManager().initLoader(1,null,this);//initialisation du loader
 
 
-        db = new ClientManager(this);
-        listView = (ListView )findViewById(R.id.my_list);
+        db = new ClientManager(this);//instanciation de la base donnee
+        listView = (ListView )findViewById(R.id.my_list);//recuperation de la listView
 
-//        checkCursor();
         simpleCursorAdapter = new SimpleCursorAdapter(getApplicationContext(), R.layout.my_views, null, from, to, 0);
 
         listView.setAdapter(simpleCursorAdapter);
@@ -58,14 +57,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     }
 
-    private void checkCursor() {
-        if(cursor.getCount() >0) {
-        }else{
-            TextView message = (TextView)findViewById(R.id.msge);
-            message.setVisibility(View.VISIBLE);
-        }
-        cursor.close();
-    }
+   
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -109,7 +101,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         simpleCursorAdapter.changeCursor(data);
-        cursor = data;
         getLoaderManager().restartLoader(1,null,this);
     }
 
