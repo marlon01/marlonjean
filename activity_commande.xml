@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context="marlon.com.libiki.CommandeActivity">
+
+    <TextView
+        android:id="@+id/cmnd_label"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/articles"/>
+    <EditText
+        android:id="@+id/comnd_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cmnd_label"
+        android:hint="commande"
+        android:autoSizeMaxTextSize="15dp"
+        android:gravity="center"
+        android:inputType="text"/>
+    <TextView
+        android:id="@+id/prix_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comnd_input"
+        android:layout_centerHorizontal="true"
+        android:text="Montant"/>
+    <EditText
+        android:id="@+id/prix_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Montant"
+        android:ems="5"
+        android:layout_below="@id/prix_label"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/btn_commande"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/prix_input"
+        android:layout_centerHorizontal="true"
+        android:text="@string/text_btn_comnd"/>
+
+
+</RelativeLayout>
