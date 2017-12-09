@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/commande"
+        android:title="commander"
+        android:icon="@drawable/icon_commande"
+        app:showAsAction="always"/>
+    <item
+        android:title="regler"
+        />
+</menu>
